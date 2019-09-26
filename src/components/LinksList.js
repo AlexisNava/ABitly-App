@@ -16,19 +16,24 @@ const links = [
     generatedURL: 'https://bit.ly/2kqqbUO',
   },
   {
-    originalURL: 'https://www.linkedin.com/in/alexisnava/',
+    originalURL: 'https://www.linkedin.com/in/alexisnava/dsdsadsadsa',
     generatedURL: 'https://bit.ly/2kqqbUO',
   },
 ];
 
 const LinksList = memo(() => {
   return (
-    <List className="container__item">
+    <List className="list container__item">
       {links.map(link => (
-        <ListItem key={link.generatedURL}>
-          <ListItemText primary={link.originalURL} />
+        <ListItem key={link.generatedURL} className="list__item">
+          <ListItemText
+            primary={link.originalURL}
+            className="list__item__data"
+          />
 
-          <Link href={link.generatedURL}>{link.generatedURL}</Link>
+          <Link href={link.generatedURL} className="list__item__data">
+            {link.generatedURL}
+          </Link>
         </ListItem>
       ))}
     </List>

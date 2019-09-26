@@ -29,7 +29,11 @@ const App = memo(() => {
         </div>
 
         <div className="form__item form__item--button">
-          <Button variant="contained" color="primary">
+          <Button
+            variant="contained"
+            color="primary"
+            className="button--mobile"
+          >
             Shorten
           </Button>
         </div>
