@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+}
+
+.container--paper {
+  margin: 2.5% 5%;
+  padding: 1%;
+}
+
+.container--vertical-aligment {
+  flex-direction: column;
+}
+
+.container__item {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.form__item {
+  justify-content: center;
+  align-items: center;
+  padding: 0.5%;
+}
+
+.form__item--textfield {
+  width: 85%;
+}
+
+.form__item--button {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

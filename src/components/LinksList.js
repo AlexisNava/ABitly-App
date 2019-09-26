@@ -23,9 +23,9 @@ const links = [
 
 const LinksList = memo(() => {
   return (
-    <List>
+    <List className="container__item">
       {links.map(link => (
-        <ListItem>
+        <ListItem key={link.generatedURL}>
           <ListItemText primary={link.originalURL} />
 
           <Link href={link.generatedURL}>{link.generatedURL}</Link>

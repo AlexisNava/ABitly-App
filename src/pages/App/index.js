@@ -8,14 +8,18 @@ import TextField from '@material-ui/core/TextField';
 // Components
 import LinksList from '../../components/LinksList';
 
+// Styles
+import './App.css';
+
 const App = memo(() => {
   const [urlText, setURLText] = useState('');
 
   return (
-    <Paper>
-      <div>
-        <div>
+    <Paper className="container container--paper container--vertical-aligment">
+      <form className="form container__item">
+        <div className="form__item form__item--textfield">
           <TextField
+            fullWidth
             label="Shorten your link"
             margin="normal"
             variant="outlined"
@@ -24,12 +28,12 @@ const App = memo(() => {
           />
         </div>
 
-        <div>
+        <div className="form__item form__item--button">
           <Button variant="contained" color="primary">
-            Primary
+            Shorten
           </Button>
         </div>
-      </div>
+      </form>
 
       <LinksList />
     </Paper>
