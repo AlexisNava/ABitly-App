@@ -3,14 +3,14 @@ version: "3"
 services:
   abitly_services:
     image: balexisnava/abitly-services
+    ports:
+      - 5001:5000
     depends_on:
       - postgres
 
   postgres:
     image: postgres:10.3
     restart: always
-    ports:
-      - 5432:5432
     environment:
       POSTGRES_USER: abitly
       POSTGRES_PASSWORD: abitly2019
