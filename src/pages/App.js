@@ -1,5 +1,34 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 
-const App = memo(() => <h1>Hello World</h1>);
+// MUI Components
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
+const App = memo(() => {
+  const [urlText, setURLText] = useState('');
+
+  return (
+    <Paper>
+      <div>
+        <div>
+          <TextField
+            label="Shorten your link"
+            margin="normal"
+            variant="outlined"
+            value={urlText}
+            onChange={event => setURLText(event.target.value)}
+          />
+        </div>
+
+        <div>
+          <Button variant="contained" color="primary">
+            Primary
+          </Button>
+        </div>
+      </div>
+    </Paper>
+  );
+});
 
 export default App;
