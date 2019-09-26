@@ -5,6 +5,9 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
+// Components
+import LinksList from '../components/LinksList';
+
 const App = memo(() => {
   const [urlText, setURLText] = useState('');
 
@@ -27,6 +30,8 @@ const App = memo(() => {
           </Button>
         </div>
       </div>
+
+      <LinksList />
     </Paper>
   );
 });
