@@ -13,8 +13,6 @@ function* requestGeneratedLink({ originalURL }) {
   try {
     const response = yield call(requestGenerateLink, originalURL);
 
-    console.log('response', response);
-
     yield put(requestGeneratedLinkSuccess(response));
   } catch (error) {
     console.error(error);
