@@ -1,4 +1,5 @@
 import React, { memo, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 // MUI Components
 import Paper from '@material-ui/core/Paper';
@@ -8,10 +9,14 @@ import TextField from '@material-ui/core/TextField';
 // Components
 import LinksList from '../../components/LinksList';
 
+// Action Creators
+import { requestGeneratedLink } from '../../store/modules/links/actionCreators';
+
 // Styles
 import './App.css';
 
 const App = memo(() => {
+  const dispatch = useDispatch();
   const [urlText, setURLText] = useState('');
 
   return (
@@ -33,6 +38,7 @@ const App = memo(() => {
             variant="contained"
             color="primary"
             className="button--mobile"
+            onClick={() => dispatch(requestGeneratedLink(urlText))}
           >
             Shorten
           </Button>
