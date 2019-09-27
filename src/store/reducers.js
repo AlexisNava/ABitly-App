@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux-immutable';
 
 // Reducers
-import reducer from './modules/links/reducer';
+import link from './modules/links/reducer';
 
 const rootReducer = combineReducers({
-  reducer,
+  link,
 });
 
 export default rootReducer;
