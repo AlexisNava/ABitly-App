@@ -3,7 +3,7 @@ import { fromJS } from 'immutable';
 // Actions
 import { REQUEST_GENERATED_LINK_SUCCESS } from './actions';
 
-const initialState = fromJS({
+export const initialState = fromJS({
   links: [],
 });
 
