@@ -22,7 +22,7 @@ const LinksList = memo(() => {
           />
 
           <Link href={link.generatedURL} className="list__item__data">
-            http://localhost:5001/{link.generatedURL}
+            http://localhost:5001/link/{link.generatedURL}
           </Link>
         </ListItem>
       ))}
