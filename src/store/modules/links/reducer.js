@@ -10,9 +10,21 @@ const initialState = fromJS({
 const link = (state = initialState, action) => {
   switch (action.type) {
     case REQUEST_GENERATED_LINK_SUCCESS:
-      return state.setIn(
-        'links',
-        state.getIn('links').push(action.payload.link),
+      const generatedURL = action.payload.generatedUrl;
+      const originalURL = action.payload.originalUrl;
+      const foundItem = state
+        .get('links')
+        .find(link => link.generatedURL === generatedURL);
+
+      if (foundItem) {
+        return state;
+      }
+
+      return state.update('links', links =>
+        links.push({
+          generatedURL,
+          originalURL,
+        }),
       );
     default:
       return state;
