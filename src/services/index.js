@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-export const requestGenerateLink = async originalURL => {
+export const requestGenerateLink = async originalUrl => {
   try {
-    const response = axios.post('http://localhost:5001/link/', {
-      originalURL,
+    const response = await axios.post('http://localhost:5001/link/', {
+      originalUrl,
     });
 
-    return response;
+    if (response && response.data && response.data) {
+      return response.data;
+    }
   } catch (error) {
     if (error.response) {
       console.error(error.response.data);
